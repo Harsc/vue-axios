@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import {userlogin} from '@/api/user/data'
+  import {userlogin} from '@/api/data'
 
   export default {
     name: 'HelloWorld',

@@ -1,26 +1,13 @@
-/**
- * 请求拦截、相应拦截、错误统一处理
- */
 import axios from 'axios'
-import qs from 'qs'
 
-
-// axios.defaults.baseURL = 'http://dummy.restapiexample.com';
 axios.defaults.baseURL = 'http://192.168.50.144:8888/monitor-pc-api';
-
-// axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-
 axios.defaults.timeout = 10000;
 
 
 axios.interceptors.request.use(config => {
   // 一般在这个位置判断token是否存在
   console.log("111111111111111111111111111111111")
-  // console.log(store.state.token)
-  // const token = store.state.token;
-  // token && (config.headers.Authorization = token);
   console.log(config)
-
   return config;
 }, function (error) {
   // 对请求错误做些什么
@@ -29,7 +16,7 @@ axios.interceptors.request.use(config => {
 
 
 axios.interceptors.response.use(response => {
-  // 处理响应数据
+
   if (response.status === 200) {
     console.log("222222222222222222222222222222")
     return Promise.resolve(response);
