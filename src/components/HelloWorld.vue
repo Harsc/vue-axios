@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import {apiAddress} from '@/util/api'
+  import {userlogin} from '@/api/user/data'
 
   export default {
     name: 'HelloWorld',
@@ -15,9 +15,13 @@
       }
     },
     created() {
-      apiAddress({}).then(res => {
-        console.log(res)
+      userlogin({
+        "password": "123456",
+        "phone": "18626456874"
       })
+        .then(res => {
+          console.log(res)
+        })
     }
   }
 </script>
