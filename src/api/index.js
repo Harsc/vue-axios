@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 
 axios.defaults.baseURL = 'http://192.168.50.144:8888/monitor-pc-api';
 axios.defaults.timeout = 10000;
@@ -29,6 +30,8 @@ axios.interceptors.response.use(response => {
   return Promise.reject(error);
 });
 
+
+export default axios;
 
 /**
  * get方法，对应get请求
